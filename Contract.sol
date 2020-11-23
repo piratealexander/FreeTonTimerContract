@@ -12,7 +12,7 @@ pragma AbiHeader expire;
 pragma AbiHeader time;
 
 abstract contract IContractCall {
-    function call() external virtual;
+    function wake() external virtual;
 }
 
 contract TimerContract {
@@ -88,7 +88,7 @@ contract TimerContract {
 	    tvm.accept();
            
 	    //Run external contract
-            IContractCall(cont).call();
+            IContractCall(cont).wake();
           
             savedContracts.delMin();
 
